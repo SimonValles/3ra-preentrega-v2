@@ -1,0 +1,31 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Partners
+{% endblock titulo %}
+
+{% block cabecera %}
+    Listado de Partners
+{% endblock cabecera %}
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>INSTITUCION</th>
+            <th>DESDE</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for partner in partners %}
+    <tr>
+            <td>{{ partner.id }}</td>
+            <td>{{ partner.nombre }}</td>
+            <td>{{ partner.antiguedad }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

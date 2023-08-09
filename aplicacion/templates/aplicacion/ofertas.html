@@ -1,0 +1,35 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Ofertas 
+{% endblock titulo %}
+
+{% block cabecera %}
+    Ofertas
+{% endblock cabecera %}
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>MARCA</th>
+            <th>MODELO</th>
+            <th>DESCUENTO ESPECIAL</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for oferta in ofertas %}
+    <tr>
+            <td>{{ oferta.id }}</td>
+            <td>{{ oferta.nombre }}</td>
+            <td>{{ oferta.marca }}</td>
+            <td>{{ oferta.modelo }}</td>
+            <td>{{ oferta.descuentoEspecial }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
